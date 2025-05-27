@@ -1,0 +1,97 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for the logo background -->
+    <radialGradient id="logoBackground" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Gradient for the moon -->
+    <radialGradient id="moonGradient" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Shadow gradient -->
+    <radialGradient id="shadowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Star glow filter -->
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Logo background rounded rectangle -->
+  <rect x="10" y="10" width="180" height="180" rx="40" ry="40" 
+        fill="url(#logoBackground)" 
+        stroke="rgba(255,255,255,0.4)" 
+        stroke-width="3"
+        filter="url(#glow)"/>
+  
+  <!-- Main moon circle -->
+  <circle cx="100" cy="80" r="35" 
+          fill="url(#moonGradient)" 
+          filter="url(#glow)"/>
+  
+  <!-- Shadow circle to create crescent -->
+  <circle cx="115" cy="75" r="30" 
+          fill="url(#shadowGradient)"/>
+  
+  <!-- Stars around the logo -->
+  <g fill="white" filter="url(#starGlow)">
+    <!-- Top left stars -->
+    <polygon points="40,40 42,46 48,46 43,50 45,56 40,52 35,56 37,50 32,46 38,46" opacity="0.9"/>
+    <polygon points="60,35 61,38 64,38 62,40 63,43 60,41 57,43 58,40 56,38 59,38" opacity="0.7"/>
+    
+    <!-- Top right stars -->
+    <polygon points="160,40 162,46 168,46 163,50 165,56 160,52 155,56 157,50 152,46 158,46" opacity="0.8"/>
+    <polygon points="140,30 141,33 144,33 142,35 143,38 140,36 137,38 138,35 136,33 139,33" opacity="0.6"/>
+    
+    <!-- Left side stars -->
+    <polygon points="30,90 32,96 38,96 33,100 35,106 30,102 25,106 27,100 22,96 28,96" opacity="0.7"/>
+    <polygon points="45,110 46,113 49,113 47,115 48,118 45,116 42,118 43,115 41,113 44,113" opacity="0.5"/>
+    
+    <!-- Right side stars -->
+    <polygon points="170,90 172,96 178,96 173,100 175,106 170,102 165,106 167,100 162,96 168,96" opacity="0.8"/>
+    <polygon points="155,115 156,118 159,118 157,120 158,123 155,121 152,123 153,120 151,118 154,118" opacity="0.6"/>
+    
+    <!-- Bottom stars -->
+    <polygon points="80,160 82,166 88,166 83,170 85,176 80,172 75,176 77,170 72,166 78,166" opacity="0.7"/>
+    <polygon points="120,165 121,168 124,168 122,170 123,173 120,171 117,173 118,170 116,168 119,168" opacity="0.6"/>
+  </g>
+  
+  <!-- Lunar text -->
+  <text x="100" y="170" 
+        font-family="Inter, Arial, sans-serif" 
+        font-size="24" 
+        font-weight="700" 
+        text-anchor="middle" 
+        fill="white" 
+        filter="url(#glow)"
+        letter-spacing="2px">Lunar</text>
+  
+  <!-- Additional glow effects -->
+  <circle cx="100" cy="80" r="35" 
+          fill="none" 
+          stroke="rgba(255,255,255,0.3)" 
+          stroke-width="1" 
+          opacity="0.5"/>
+</svg>
